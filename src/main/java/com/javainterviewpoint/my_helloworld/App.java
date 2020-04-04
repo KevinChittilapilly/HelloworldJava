@@ -1,10 +1,12 @@
 package com.javainterviewpoint.my_helloworld;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * Hello world!
@@ -12,12 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @EnableAutoConfiguration
-
+@EnableWebSecurity
+@SpringBootApplication
 public class App 
 {
-	@RequestMapping("/")
+	@GetMapping("/")
     String hello() {
-        return "Hello World!";
+    
+    return "Add the /rest/auth endpoint in URL to open authentication--->> ENTER CORRECT USERNAME AND PASSWORD....!";
+    
     }
 	
 	public static void main(String[] args) throws Exception {
